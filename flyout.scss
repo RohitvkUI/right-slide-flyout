@@ -1,0 +1,191 @@
+// Start of my account flyout//
+
+.myaccount-flyout-wrapper {
+    margin: 0;
+    padding: 0;
+    position: $flyout-wrapper-position;
+    height: 100%;
+
+    .myAccount-flyout-backdrop {
+        opacity: $flyout-backdrop-opacity;
+        background-color: $backdrop-background-color;
+        position: $flyout-backdrop-position;
+        z-index: 7777;
+        top: $flyout-top-position;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: $flyout-backdrop-display;
+    }
+
+    .sidebar {
+        overflow: $sidebar-overflow;
+        top: $flyout-top-position;
+        z-index: 9999;
+        height: calc(100% - 72px);
+        box-shadow: 0 2px 4px 0 $sidebar-box-shadow;
+        background-color: $flyout-background-color;
+        position: $sidebar-position;
+        width: $sidebar-wdith;
+
+        &__user-welcome {
+            width: $sidebar-userLinks-width;
+            height: $flyout-menuitem-top-position;
+            border-bottom: $sidebar-userLinks-solid-border $border-color;            
+            box-sizing: $sidebar-userWelcome-box-sizing;
+            padding-left: $sidebar-userWelcome-padding-left;
+            padding-right: $sidebar-userWelcome-padding-right;
+            display:$sidebar-nav-element-display-hide;            
+
+            &__message {
+                margin: 0;
+                font-size: $sidebar-userWelcome-message-font-size;
+                line-height: $sidebar-userWelcome-message-line-height;
+                flex: calc(100% - 40px);
+                @include sidebar-text-styles();
+            }
+
+            &__close {
+                align-self: $sidebar-userWelcome-close-alignment;
+                font-size: $sidebar-userWelcome-close-font-size;
+                font-weight: $sidebar-userWelcome-close-font-weight;
+                flex: 0 0 40px;
+                text-align: $sidebar-userWelcome-close-text-align;
+                color: $grey-color-text;
+                cursor: $sidebar-userWelcome-close-cursor;                
+                border: $sidebar-userWelcome-close-border;
+                background-color: $flyout-background-color;
+            }
+        }
+        &__show-user-welcome{
+        	display:$sidebar-userWelcome-display;
+        }
+        &__hide-signInAccountLabel{
+        	display:$sidebar-nav-element-display-hide;
+        }
+        &__user-signInLinks {
+            width: $sidebar-userLinks-width;
+            height: $flyout-menuitem-top-position;
+            border-bottom: $sidebar-userLinks-solid-border $border-color;
+            display: $sidebar-userWelcome-display;
+            box-sizing: $sidebar-userWelcome-box-sizing;
+            padding-left: $sidebar-userWelcome-padding-left;
+            padding-right: $sidebar-userWelcome-padding-right;
+
+            &__message {
+                margin: 0;
+                font-size: $sidebar-userWelcome-message-font-size;
+                line-height: $sidebar-userWelcome-message-line-height;
+                flex: calc(100% - 40px);
+                @include sidebar-text-styles();
+            }
+
+            &__close {
+                align-self: $sidebar-userWelcome-close-alignment;
+                font-size: $sidebar-userWelcome-close-font-size;
+                font-weight: $sidebar-userWelcome-close-font-weight;
+                flex: 0 0 40px;
+                text-align: $sidebar-userWelcome-close-text-align;
+                color: $grey-color-text;
+                cursor: $sidebar-userWelcome-close-cursor;                
+                border: $sidebar-userWelcome-close-border;
+                background-color: $flyout-background-color;
+            }
+        }
+
+        &__nav {
+            margin: 0;
+            padding: 0;
+            width: $sidebar-userLinks-width;
+            display: $sidebar-nav-display;
+            top: $flyout-menuitem-top-position;
+
+            &-element {
+                list-style-type: none;
+                width: $sidebar-userLinks-width;
+                height: $sidebar-nav-element-height;
+                border-bottom: 1px solid $border-color;
+                display: $sidebar-nav-element-display;
+                box-sizing: $sidebar-nav-element-box-sizing;
+                padding-left: $sidebar-nav-element-padding-left;
+
+                &__text {
+                    font-size: $sidebar-nav-element-text-font-size;
+                    line-height: $sidebar-nav-element-text-line-height;
+                    @include sidebar-text-styles();
+                }
+            }
+            &-signout-link {
+            	display:$sidebar-nav-element-display-hide;
+            	cursor:pointer;
+            }
+            &-show-signout-link {
+            	display:$sidebar-nav-element-display;
+            }
+        }
+    }
+
+    // -- Mobile
+    @media screen and (max-width:479px) and (min-width: 320px) {
+        .sidebar {
+            @include sidebar-behaviour-small-screens();
+            
+			&__user-signInLinks{
+				padding-left:$sidebar-nav-element-padding-left-mobile;
+			}
+            &__user-welcome {
+                padding-left: $sidebar-userWelcome-padding-left-mobile;
+            }
+
+            &__nav {
+                &-element {
+                    padding-left: $sidebar-nav-element-padding-left-mobile;
+                    height: $sidebar-nav-element-height-mobile;
+                }
+            }
+        }
+    }
+
+    // -- Tablet
+    @media only screen and (min-width: 480px) and (max-width: 768px) {
+        .sidebar {
+            @include sidebar-behaviour-small-screens();
+            
+			&__user-signInLinks{
+				padding-left:$sidebar-nav-element-padding-left-tablet;
+			}
+            &__user-welcome {
+                padding-left: $sidebar-userWelcome-padding-left-tablet;
+            }
+
+            &__nav {
+                &-element {
+                    padding-left: $sidebar-nav-element-padding-left-tablet;
+                    height: $sidebar-nav-element-height-tablet;
+                }
+            }
+        }
+    }
+
+    // -- Tablet / Small Desktop
+    @media only screen and (min-width: 769px) and (max-width: 1024px) {
+        @include sidebar-behaviour-desktop-screens();
+    }
+
+    // -- Desktop General
+    @media only screen and (min-width: 1025px) and (max-width: 1279px) {
+        @include sidebar-behaviour-desktop-screens();
+    }
+
+    // -- Desktop Medium Screens
+    @media only screen and (min-width: 1280px) and (max-width: 1439px) {
+        @include sidebar-behaviour-desktop-screens();
+    }
+
+    // -- Desktop Big Screens
+    @media only screen and (min-width: 1440px) {
+        @include sidebar-behaviour-desktop-screens();
+    }
+
+}
+// End of my account flyout//
