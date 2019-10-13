@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>penzoil</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body class="myaccount-flyout-wrapper">
+    <div class="header">
+         <div class="header-button">
+                <a id="menu-button" class="header-button-toggle header-button-target" role="button" href="javascript:void(0)" aria-haspopup="true" aria-expanded="false"
+                    aria-controls="menu" onclick="toggleSideBar()">
+                    Button
+                </a>
+        </div>
+    </div>
+    <div class="back-drop" onclick="toggleSideBar()"></div>
+        <nav class="sidebar sidebar-target">
+            <div class="sidebar__user-welcome">
+                <p class="sidebar__user-welcome__message">Hi Rohit!</p>
+                <span role="button" class="sidebar__user-welcome__close" aria-label="close navigation menu" tabindex="0"
+                    onclick="toggleSideBar()">&times;</span>
+            </div>
+            <ul class="sidebar__nav" role="menu" id="menu" aria-labelledby="menu-button">
+                <li class="sidebar__nav-element" role="none"><a role="menuitem" class="sidebar__nav-element__text" href="https://www.safeway.com/account/orders.html">Orders</a></li>
+                <li class="sidebar__nav-element" role="none"><a role="menuitem" class="sidebar__nav-element__text" href="https://www.safeway.com/account/rewards.html">Rewards</a></li>
+                <li class="sidebar__nav-element" role="none"><a role="menuitem" class="sidebar__nav-element__text" href="https://www.safeway.com/mylist.html">My List</a></li>
+                <li class="sidebar__nav-element" role="none"><a role="menuitem" class="sidebar__nav-element__text" href="https://www.safeway.com/account/account-settings.html">Account Settings</a></li>
+                <li class="sidebar__nav-element" role="none"><a role="menuitem" class="sidebar__nav-element__text" href="https://shop.safeway.com/ecom/modern1/uca/paymentKMSI">Payment Methods</a></li>
+                <li class="sidebar__nav-element" role="none"><a role="menuitem" class="sidebar__nav-element__text" href="https://www.safeway.com/account/fulfillment-preferences.html">Address Preferences</a></li>
+                <li class="sidebar__nav-element" role="none"><a role="menuitem" class="sidebar__nav-element__text" href="https://www.safeway.com/account/communication-preference.html">Communication Preferences</a></li>
+                <li class="sidebar__nav-element" role="none"><a role="menuitem" class="sidebar__nav-element__text" href="https://www.safeway.com/account/loyalty-partners.html">Loyalty Partners</a></li>
+                <li class="sidebar__nav-element" role="none"><a role="menuitem" class="sidebar__nav-element__text" href="#">Sign Out</a></li>
+            </ul>
+        </nav>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
